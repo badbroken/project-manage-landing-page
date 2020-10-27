@@ -1,0 +1,339 @@
+//Defining Color Sets
+$bright-red: hsl(12, 88%, 59%);
+$dark-blue: hsl(228, 39%, 23%);
+$dark-gray-blue: hsl(227, 12%, 61%);
+$very-dark-blue: hsl(233, 12%, 13%);
+$very-pale-red: hsl(13, 100%, 96%);
+$very-light-gray: hsl(0, 0%, 98%);
+
+// Importing Different Fonts
+@font-face {
+    font-family: 'Be Vietnam';
+    src: url("/fonts/Be_Vietnam/BeVietnam-Regular.ttf") format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Be Vietnam';
+    src: url("/fonts/Be_Vietnam/BeVietnam-Medium.ttf") format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Be Vietnam';
+    src: url("/fonts/Be_Vietnam/BeVietnam-Bold.ttf") format('truetype');
+    font-weight: 700;
+}
+
+
+// Element Styling
+@mixin buttonStyle {
+    background-color: $bright-red;
+    border-radius: 30px;
+    padding: 0.8rem 1.7rem;
+    border: none;
+    color: white;
+    font-family: 'Be Vietnam', cursive;
+    font-weight: 700;
+
+    &:hover {
+        box-shadow: 0px 55px 60px -30px hsl(12, 88%, 59%);
+        transition: box-shadow 0.2s ease-in-out;
+    }
+}
+
+@mixin revButtonStyle {
+    background-color: $very-light-gray;
+    border-radius: 30px;
+    padding: 0.8rem 1.7rem;
+    border: none;
+    color: $bright-red;
+    font-family: 'Be Vietnam', cursive;
+    font-weight: 700;
+}
+
+@mixin spanStyle {
+    background-color: $bright-red;
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    color: white;
+    font-family: 'Be Vietnam', cursive;
+    font-weight: 700;
+}
+
+@mixin h1Font {
+    font-family: 'Be Vietnam';
+    font-weight: 700;
+    color: $dark-blue;
+}
+
+@mixin h2Font {
+    font-family: 'Be Vietnam';
+    font-weight: 700;
+    color: $dark-blue;
+}
+
+@mixin h6Font {
+    font-family: 'Be Vietnam';
+    font-weight: 700;
+    color: $dark-blue;
+    font-size: 16px;
+}
+
+@mixin pFont {
+    font-family: 'Be Vietnam';
+    font-weight: 400;
+    color: $dark-gray-blue;
+    font-size: 16px;
+}
+
+@mixin hoverColor {
+    color: $dark-gray-blue;
+    transition: color 0.1s ease-in-out;
+}
+
+@mixin footerHover {
+    color: $bright-red;
+    transition: color 0.1s ease-in-out;
+}
+
+@mixin inputBox {
+    border-radius: 30px;
+    border: none;
+    color: $bright-red;
+}
+
+html,
+body {
+    background: url(/images/bg-tablet-pattern.svg), url(/images/bg-tablet-pattern.svg);
+    background-repeat: no-repeat;
+    background-position-x: 752px, -525px;
+    background-position-y: -163px, 1100px;
+}
+
+
+//Navigation Styling
+#navigation {
+    min-height: 20vh;
+
+    @media screen and (max-width: 1200px) {
+        min-height: 10vh;
+    }
+
+    .navbar {
+
+        .container {
+            button {
+                .navbar-toggler-icon {
+                    background-image: url(/images/icons/icon-hamburger.svg);
+                }
+            }
+
+            .getStarted {
+                button {
+                    @include buttonStyle();
+                }
+            }
+
+            .navLinks {
+                .navbar-nav {
+                    li {
+                        a {
+                            color: $dark-blue;
+
+                            &:hover {
+                                @include hoverColor();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#statistics {
+    min-height: 70vh;
+
+    @media screen and (max-width: 1200px) {
+        min-height: 90vh;
+    }
+
+    .container {
+        .row {
+            .left {
+                h1 {
+                    @include h2Font();
+                }
+
+                p {
+                    @include pFont();
+                    padding-right: 6rem;
+
+                    @media screen and (max-width: 1200px) {
+                        padding-right: 0;
+                    }
+                }
+
+                button {
+                    @include buttonStyle();
+                }
+            }
+
+            .right {
+                img {
+                    float: right;
+                    width: 90%;
+                }
+
+            }
+        }
+    }
+}
+
+#details {
+    min-height: 70vh;
+
+    .container {
+        .row {
+            .left {
+                h2 {
+                    @include h2Font();
+                }
+
+                p {
+                    @include pFont();
+                    padding-right: 5rem;
+
+                    @media screen and (max-width: 1200px) {
+                        padding-right: 0;
+                    }
+                }
+            }
+
+            .right {
+                h6 {
+                    @include h6Font();
+                }
+
+                p {
+                    @include pFont();
+                }
+
+                span {
+                    @include spanStyle();
+                }
+            }
+        }
+    }
+}
+
+#testimonial {
+    min-height: 60vh;
+
+
+    .container-fluid {
+        text-align: center;
+
+        h2 {
+            @include h2Font();
+        }
+
+        .owl-carousel {
+            .card {
+                border: none;
+
+                img {
+                    width: 15%;
+                    margin: 0 auto;
+                }
+
+                h6 {
+                    @include h6Font();
+                }
+            }
+
+
+        }
+
+        button {
+            @include buttonStyle();
+        }
+    }
+}
+
+#simpleBanner {
+    background: url(/images/bg-tablet-pattern.svg), #f25f3a;
+    background-repeat: no-repeat;
+    background-blend-mode: color-burn;
+
+
+    .container {
+        height: 30vh;
+
+        .row {
+            h2 {
+                @include h2Font();
+                color: $very-light-gray;
+            }
+
+            button {
+                @include revButtonStyle();
+            }
+        }
+    }
+}
+
+footer {
+    min-height: 30vh;
+
+    @media screen and (max-width: 1200px) {
+        min-height: 40vh;
+    }
+
+
+    background-color: $very-dark-blue;
+    color: $very-light-gray;
+
+    .container {
+        height: 30vh;
+
+        img {
+            -webkit-filter: invert(100%);
+            /* safari 6.0 - 9.0 */
+            filter: invert(100%);
+        }
+
+        a {
+            color: $very-light-gray;
+            text-decoration: none;
+
+            &:hover {
+                @include footerHover();
+            }
+        }
+
+        li {
+            list-style: none;
+        }
+
+        button {
+            @include buttonStyle();
+        }
+
+        input {
+            @include inputBox();
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        p {
+            color: $dark-gray-blue;
+        }
+    }
+
+
+}
