@@ -18,7 +18,7 @@
 
 html,
 body {
-  background: url(/images/bg-tablet-pattern.svg), url(/images/bg-tablet-pattern.svg);
+  background: url("./images/bg-tablet-pattern.svg"), url("./images/bg-tablet-pattern.svg");
   background-repeat: no-repeat;
   background-position-x: 752px, -525px;
   background-position-y: -163px, 1100px;
@@ -35,7 +35,7 @@ body {
 }
 
 #navigation .navbar .container button .navbar-toggler-icon {
-  background-image: url(/images/icons/icon-hamburger.svg);
+  background-image: url("./images/icons/icon-hamburger.svg");
 }
 
 #navigation .navbar .container .getStarted button {
@@ -219,7 +219,7 @@ body {
 }
 
 #simpleBanner {
-  background: url(/images/bg-tablet-pattern.svg), #f25f3a;
+  background: url("./images/bg-tablet-pattern.svg"), #f25f3a;
   background-repeat: no-repeat;
   background-blend-mode: color-burn;
 }
