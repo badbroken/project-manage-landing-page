@@ -251,14 +251,19 @@ footer {
   color: #fafafa;
 }
 
-@media screen and (max-width: 1200px) {
-  footer {
-    min-height: 40vh;
+footer .container {
+  padding-top: 4em;
+  height: 30vh;
+}
+
+@media screen and (max-width: 990px) {
+  footer .container {
+    height: 35vh;
   }
 }
 
-footer .container {
-  height: 30vh;
+footer .container #first-col img {
+  width: 60%;
 }
 
 footer .container img {
@@ -276,6 +281,10 @@ footer .container a:hover {
   color: #f25f3a;
   -webkit-transition: color 0.1s ease-in-out;
   transition: color 0.1s ease-in-out;
+}
+
+footer .container ul {
+  padding: 0;
 }
 
 footer .container li {
@@ -313,5 +322,11 @@ footer .container input:focus {
 
 footer .container p {
   color: #9095a7;
+}
+
+@media screen and (max-width: 770px) {
+  footer {
+    min-height: 50vh;
+  }
 }
 /*# sourceMappingURL=style.css.map */
